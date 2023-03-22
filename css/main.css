@@ -1,0 +1,128 @@
+:root {
+    --principal-font: 'Kumbh Sans';
+    --very-dark-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --very-ark-grayish-blue: blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue:  hsl(240, 5%, 91%);
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+body,
+html {
+    min-height: 100vh;
+}
+
+body {
+    font-size: 12px;
+    margin: 0 auto;
+    font-family: var(--principal-font);
+    background-image: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.principal {
+    max-width: 850px;
+    width: 60%;
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-radius: 40px;
+    position: relative; 
+    overflow: hidden;
+}
+
+.card-container {
+    width: 45%;
+    padding-right: 4rem;
+}
+
+.card-container__title {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.card-container__question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-bottom: solid 1px var(--light-grayish-blue);
+    text-align: start;
+    font-size: 14px;
+    padding-top: 1.5rem;
+}
+
+.card-container__question:hover{
+    color: var(--soft-red);
+}
+
+.card-container__question.active {
+    color:black;
+    font-weight: bold;
+}
+
+.card-container__question::after {
+    content: url('../images/icon-arrow-down.svg');
+
+}
+
+.card-container__question.active::after {
+    transform: rotate(180deg);
+
+}
+
+.card-container__answer {
+    color: var(--dark-grayish-blue);
+    padding-left: 0.5rem;
+    width: 80%;
+    display: none;
+}
+
+.card__image {
+    width: 28rem;
+    top: 4rem;
+    left: 0;
+    position: absolute; 
+    transform: translateX(-18%);
+}
+
+@media screen and (max-width: 440px) {
+    .principal {
+        width: 85%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8rem;
+        overflow: visible;
+        padding-bottom: 4rem;
+        padding-top: 6rem;
+    }
+
+    .card-container {
+        width: 90%;
+        padding: 0;
+    }
+
+    .card-container__title {
+        text-align: center;
+    }
+
+    .card__image {
+        width: 15rem;
+        top: -7rem;
+        transform: translateX(15%);
+    }
+}
